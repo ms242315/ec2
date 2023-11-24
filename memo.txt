@@ -1,0 +1,36 @@
+
+
+## 8.1
+
+rails generate scaffold book title:string author:string published:date showing:boolean price:integer
+
+rails generate scaffold tag name:string
+
+rails generate model tagging book_id:references tag_id:references
+
+
+
+## 8.2
+
+edit app/controllers/books_controller.rb
+edit app/controllers/tags_controller.rb
+
+remove app/views/books/show.html.erb
+edit app/views/books/index.html.erb
+remove app/views/tags/show.html.erb
+edit app/views/tags/index.html.erb
+
+edit config/routes.rb
+
+edit test/controllers/books_controller_test.rb
+edit test/controllers/tags_controller_test.rb
+
+
+## 8.3
+
+edit app/views/books/_form.html.erb
+edit app/controllers/books_controller.rb
+edit app/models/book.rb
+edit app/models/tag.rb
+
+

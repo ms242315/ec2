@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  author: MyString
+  published: 2023-07-14
+  showing: false
+  price: 1
+
+two:
+  title: MyString
+  author: MyString
+  published: 2023-07-14
+  showing: false
+  price: 1

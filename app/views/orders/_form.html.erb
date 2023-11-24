@@ -1,0 +1,35 @@
+<%= form_with(model: order, url: confirm_orders_path(order: order, book: book.id)) do |form| %>
+<% end %>
+<%= form_with(model: order) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <strong>Name:</strong>
+    <%= book.title %>
+    <%= form.hidden_field :product_id, value: book.id, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :count %>
+    <%= form.number_field :count, value: order.count, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, value: order.address, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

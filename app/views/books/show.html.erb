@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <% if @book.photo.attached? %>
+    <%= image_tag @book.photo %>
+    <%= image_tag @book.thumbnail %>
+  <% end %>
+</p>
+

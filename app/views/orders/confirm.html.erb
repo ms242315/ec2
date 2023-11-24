@@ -1,0 +1,29 @@
+<h1>注文確認画面</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <% if @book.photo.attached? %>
+    <%= image_tag @book.photo %>
+    <%= image_tag @book.thumbnail %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @order.count %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @order.address %>
+</p>
+
+<p>
+  <%= link_to '修正する', new_order_path(id: @book.id, order: {id: @order.id, product_id: @book.id, count: @order.count, address: @order.address}) %>
+  <%= link_to '注文確定', create_orders_path(@order) %>
+</p>
